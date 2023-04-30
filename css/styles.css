@@ -35,13 +35,12 @@ header {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   padding: 10px 20px;
 }
 
 .mobile-nav_icons {
   display: none;
-  width: 60%;
   align-content: center;
   justify-content: flex-end;
 }
@@ -53,18 +52,18 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 50px;
+  margin: 0 20px;
 }
 
 .icon svg,
 .icon path {
-  width: 50px;
+  width: 30px;
   fill: var(--secondary-font-color);
 }
 
 .mobile-nav_item {
   display: none;
-  width: 40px;
+  width: 30px;
   height: auto;
   color: var(--secondary-font-color);
 }
