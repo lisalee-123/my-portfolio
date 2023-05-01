@@ -314,8 +314,14 @@ form {
 /* ANIMATION PART*/
 
 .berlin-illustration {
-  display: flex;
+  display: block;
   width: 50%;
+  margin: 100px auto;
+  justify-content: center;
+}
+
+.berlin-illustration svg {
+  text-align: center;
   margin: 100px auto;
 }
 
@@ -808,7 +814,6 @@ footer {
   }
   .contact-grid {
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: column-reverse;
     grid-gap: 10px;
   }
   #contact-form {
@@ -821,7 +826,7 @@ footer {
 
   input,
   textarea {
-    border: solid 4px;
+    border: solid 2px;
     border-color: var(--secondary-font-color);
   }
 
