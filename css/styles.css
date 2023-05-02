@@ -15,6 +15,9 @@
   --font-size-medium: 22px;
   --primary-font-weight: 700;
   --primary-border-radius: 10px;
+  --font-size-h1-max: 50px;
+  --font-size-2-max: 40px;
+  --font-size-3-max: 35px;
 }
 
 * {
@@ -37,6 +40,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .mobile-nav_icons {
@@ -74,31 +89,6 @@ header {
   float: left;
 }
 
-.nav-left {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.nav-right {
-  display: flex;
-  justify-content: space-evenly;
-
-  width: 100%;
-}
-
-.logo {
-  display: inline-flex;
-}
-.logo:hover {
-  cursor: pointer;
-  transition: opacity 0.5s ease-in;
-}
-
-.logo img {
-  height: 45px;
-}
-
 .nav-left a,
 .nav-right a {
   display: inline-block;
@@ -125,7 +115,8 @@ header {
   transition: transform 0.25s ease-out;
 }
 
-.navigation-list_item:hover::after {
+.navigation-list_item:hover::after,
+.navigation-list_item:focus::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -133,7 +124,13 @@ header {
 .logo {
   display: inline;
 }
-.logo:hover {
+
+.logo img {
+  height: 45px;
+}
+
+.logo:hover,
+.logo:focus {
   cursor: pointer;
   transition: opacity 0.5s ease-in;
 }
@@ -217,7 +214,6 @@ a:active {
 .button_mywork {
   background-color: var(--secondary-color);
   text-decoration: none;
-
   border-radius: 5px;
   border-style: none;
   border-bottom: 2px solid var(--secondary-font-color);
@@ -275,7 +271,6 @@ form {
 @supports (display: grid) {
   .contact-grid {
     display: grid;
-    /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
@@ -727,7 +722,7 @@ footer {
 
   .nav-left a,
   .nav-right a {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .profile {
@@ -739,11 +734,11 @@ footer {
   }
 
   .profile h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .profile p {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .profile_portrait {
@@ -756,13 +751,13 @@ footer {
   }
 
   .button_mywork {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
     font-weight: bold;
     padding: 9px;
   }
 
   footer p {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
   }
   footer a img {
     width: 60px;
@@ -771,24 +766,24 @@ footer {
 
   th,
   td {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .about h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .my-work h1,
   h2 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .my-work p {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .my-work a {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
   }
 
   .tech-stack svg,
@@ -798,16 +793,15 @@ footer {
   }
 
   .contact-container {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
     padding: 0 20px 40px 0;
   }
 
   .main-contact h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
   .contact-container a {
-    font-size: 40px;
-    font-size: font-size-medium;
+    font-size: var(--font-size-2-max);
   }
   .contact-container h1 {
     font-size: font-size-h1;
@@ -818,10 +812,10 @@ footer {
   }
   #contact-form {
     width: 80%;
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
   .standard-label {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   input,
@@ -831,7 +825,7 @@ footer {
   }
 
   .button_submit {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
     font-weight: bold;
     padding: 12px;
   }
