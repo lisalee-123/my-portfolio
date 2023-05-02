@@ -32,15 +32,34 @@ header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px 20px;
+}
+
+.nav-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .mobile-nav_icons {
   display: none;
-  width: 60%;
   -ms-flex-line-pack: center;
   align-content: center;
   -webkit-box-pack: end;
@@ -62,22 +81,22 @@ header {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-left: 50px;
+  margin: 0 20px;
 }
 
 .icon svg {
-  width: 50px;
+  width: 30px;
   fill: hsl(0, 1%, 42%);
 }
 
 .icon path {
-  width: 50px;
+  width: 30px;
   fill: hsl(0, 1%, 42%);
 }
 
 .mobile-nav_item {
   display: none;
-  width: 40px;
+  width: 30px;
   height: auto;
   color: hsl(0, 1%, 42%);
 }
@@ -86,42 +105,6 @@ header {
   width: 120px;
   padding-right: 30px;
   float: left;
-}
-
-.nav-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.nav-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-
-  width: 100%;
-}
-
-.logo {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-.logo:hover {
-  cursor: pointer;
-  -webkit-transition: opacity 0.5s ease-in;
-  transition: opacity 0.5s ease-in;
-}
-
-.logo img {
-  height: 45px;
 }
 
 .nav-left a {
@@ -161,7 +144,8 @@ header {
   transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
-.navigation-list_item:hover::after {
+.navigation-list_item:hover::after,
+.navigation-list_item:focus::after {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: bottom left;
@@ -171,7 +155,13 @@ header {
 .logo {
   display: inline;
 }
-.logo:hover {
+
+.logo img {
+  height: 45px;
+}
+
+.logo:hover,
+.logo:focus {
   cursor: pointer;
   -webkit-transition: opacity 0.5s ease-in;
   transition: opacity 0.5s ease-in;
@@ -266,7 +256,6 @@ a:active {
 .button_mywork {
   background-color: #008080;
   text-decoration: none;
-
   border-radius: 5px;
   border-style: none;
   border-bottom: 2px solid hsl(0, 1%, 42%);
@@ -335,7 +324,6 @@ form {
   .contact-grid {
     display: -ms-grid;
     display: grid;
-    /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
     -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
@@ -382,10 +370,16 @@ form {
 /* ANIMATION PART*/
 
 .berlin-illustration {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   width: 50%;
+  margin: 100px auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.berlin-illustration svg {
+  text-align: center;
   margin: 100px auto;
 }
 
@@ -844,6 +838,14 @@ footer {
 }
 
 @media all and (min-width: 751px) and (max-width: 992px) {
+  .navigation-list a {
+    font-size: 12px;
+  }
+
+  .navigation-list img {
+    height: 35px;
+    width: auto;
+  }
   .profile {
     width: 80%;
     padding: 40px;
@@ -865,13 +867,149 @@ footer {
   h1 {
     font-size: font-size-medium;
   }
+}
 
-  .navigation-list a {
-    font-size: 12px;
+@media all and (min-width: 1500px) {
+  .navigation-bar {
+    margin-top: 100px;
   }
 
-  .navigation-list img {
-    height: 35px;
-    width: auto;
+  .navigation-list_item::after {
+    height: 4px;
+  }
+
+  .active {
+    border-bottom: solid 4px;
+    border-color: hsl(0, 1%, 42%);
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .nav-left a {
+    font-size: 40px;
+  }
+
+  .nav-right a {
+    font-size: 40px;
+  }
+
+  .profile {
+    width: 90%;
+    height: 50%;
+    padding: 40px;
+    margin: 400px auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .profile h1 {
+    font-size: 50px;
+  }
+
+  .profile p {
+    font-size: 40px;
+  }
+
+  .profile_portrait {
+    margin: 100px;
+    height: 400px;
+  }
+
+  .profile_portrait img {
+    height: 400px;
+  }
+
+  .button_mywork {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 9px;
+  }
+
+  footer p {
+    font-size: 35px;
+  }
+  footer a img {
+    width: 60px;
+    margin: 20px;
+  }
+
+  th {
+    font-size: 40px;
+  }
+
+  td {
+    font-size: 40px;
+  }
+
+  .about h1 {
+    font-size: 50px;
+  }
+
+  .my-work h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  .my-work p {
+    font-size: 40px;
+  }
+
+  .my-work a {
+    font-size: 35px;
+  }
+
+  .tech-stack svg,
+  .tech-stack path {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-container {
+    font-size: 40px;
+    padding: 0 20px 40px 0;
+  }
+
+  .main-contact h1 {
+    font-size: 50px;
+  }
+  .contact-container a {
+    font-size: 40px;
+  }
+  .contact-container h1 {
+    font-size: font-size-h1;
+  }
+  .contact-grid {
+    -ms-grid-columns: 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  #contact-form {
+    width: 80%;
+    font-size: 40px;
+  }
+  .standard-label {
+    font-size: 40px;
+  }
+
+  input {
+    border: solid 2px;
+    border-color: hsl(0, 1%, 42%);
+  }
+
+  textarea {
+    border: solid 2px;
+    border-color: hsl(0, 1%, 42%);
+  }
+
+  .button_submit {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 12px;
   }
 }
