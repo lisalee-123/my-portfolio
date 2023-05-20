@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="body-contact">
     <header class="page-header">
@@ -104,117 +110,104 @@
           </div>
         </div>
         <!-- end -->
-        <div class="nav-left">
-          <a href="index.html" role="menuitem" class="navigation-list_item"
+        <div class="logo">
+          <a href="index.html">
+            <img class="navigation-list_item" src="img/logo.svg" alt="logo"
+          /></a>
+        </div>
+
+        <div class="nav-right">
+          <a
+            href="index.html"
+            role="menuitem"
+            class="navigation-list_item active"
             >Home</a
           >
 
           <a href="about.html" role="menuitem" class="navigation-list_item"
             >About Me</a
           >
-        </div>
-        <div class="logo">
-          <a href="index.html">
-            <img class="navigation-list_item" src="img/logo.svg" alt="logo"
-          /></a>
-        </div>
-        <div class="nav-right">
           <a href="mywork.html" role="menuitem" class="navigation-list_item"
             >My Work</a
           >
 
-          <a
-            href="contact.html"
-            role="menuitem"
-            class="navigation-list_item active"
+          <a href="contact.html" role="menuitem" class="navigation-list_item"
             >Contact</a
           >
         </div>
       </div>
     </header>
-    <main class="main-contact">
-      <h1>Contact</h1>
+    <div class="background-image">
+      <main class="main-contact">
+        <h1 class="contact-h1">let's talk!</h1>
 
-      <div class="contact-container">
-        Lisa Röhrig<br />
-        Mustermann Straße 3<br />
-        13187 Berlin<br />
-        Germany<br />
-        <br />
-        Telephone
-        <a
-          href="tel:+4917647783532"
-          aria-label="Phone number: +49 176 477 83 532"
-          >+49 176 477 83 532</a
-        ><br />
+        <div class="contact-grid">
+          <div class="contact-grid_item contact-container">
+            Lisa Röhrig<br />
+            Mustermann Straße 3<br />
+            13187 Berlin<br />
+            Germany<br />
 
-        <a href="mailto:lisa.roehrig.lrh@gmail.com"
-          >lisa.roehrig.lrh@gmail.com</a
-        >
-        <br />
-      </div>
-      <div class="contact-grid">
-        <div class="contact-grid_item">
-          <img src="img/background-contact.jpg" />
+            Telephone
+            <a
+              href="tel:+4917647783532"
+              aria-label="Phone number: +49 176 477 83 532"
+              >+49 176 477 83 532</a
+            ><br />
+
+            <a href="mailto:lisa.roehrig.lrh@gmail.com"
+              >lisa.roehrig.lrh@gmail.com</a
+            >
+            <br />
+          </div>
+
+          <form
+            action=""
+            method="post"
+            id="contact-form"
+            class="contact-grid_item"
+          >
+            <label class="standard-label form-item" for="contact-email"
+              >Email:
+            </label>
+            <input class="form-item" type="email" id="contact-email" required />
+
+            <label class="standard-label form-item" for="contact-phone"
+              >Telephone:
+            </label>
+            <input
+              type="tel"
+              id="contact-phone"
+              pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+              class="form-item"
+            />
+
+            <label class="standard-label" for="contact-message"
+              >Message:
+            </label>
+            <textarea
+              class="form-item"
+              id="contact-message"
+              required
+              maxlength="240"
+            ></textarea>
+            <input type="submit" class="button_submit" value="Send message" />
+          </form>
         </div>
+      </main>
+    </div>
+    <div class="social-media">
+      <a href="http://127.0.0.1:5500/index.html"
+        ><img src="img/github.svg" alt="github icon"
+      /></a>
 
-        <form
-          action=""
-          method="post"
-          id="contact-form"
-          class="contact-grid_item"
-        >
-          <label class="standard-label form-item" for="contact-email"
-            >Email:
-          </label>
-          <input class="form-item" type="email" id="contact-email" required />
+      <a href="#"><img src="img/twitter.svg" alt="twitter icon" /></a>
 
-          <label class="standard-label form-item" for="contact-phone"
-            >Telephone:
-          </label>
-          <input
-            type="tel"
-            id="contact-phone"
-            pattern="\d{3}[\-]\d{3}[\-]\d{4}"
-            class="form-item"
-          />
-
-          <label class="standard-label form-item" for="contact-message"
-            >Message:
-          </label>
-          <textarea
-            class="form-item"
-            id="contact-message"
-            required
-            maxlength="240"
-          ></textarea>
-          <input type="submit" class="button_submit" value="Send message" />
-        </form>
-      </div>
-      <!-- to be done 
-      <img
-        src="img/paper-plane-svgrepo-com.svg"
-        alt="animated paper plane"
-        class="paper-plane"
-      />
-      -->
-    </main>
-    <footer>
-      <div>
-        <p>Find me on</p>
-      </div>
-      <div>
-        <a href="http://127.0.0.1:5500/index.html"
-          ><img src="img/github.svg" alt="github icon"
-        /></a>
-
-        <a href="#"><img src="img/twitter.svg" alt="twitter icon" /></a>
-
-        <a href="https://www.linkedin.com/in/lisa-r%C3%B6hrig-b50a5315a/">
-          <img src="img/linkedin.svg" alt="linkedin icon"
-        /></a>
-      </div>
-    </footer>
+      <a href="https://www.linkedin.com/in/lisa-r%C3%B6hrig-b50a5315a/">
+        <img src="img/linkedin.svg" alt="linkedin icon"
+      /></a>
+    </div>
+    <footer></footer>
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>

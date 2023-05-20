@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="page-header">
@@ -104,24 +110,23 @@
           </div>
         </div>
         <!-- end -->
-        <div class="nav-left">
-          <a href="index.html" role="menuitem" class="navigation-list_item"
-            >Home</a
-          >
-
-          <a
-            href="about.html"
-            role="menuitem"
-            class="navigation-list_item active"
-            >About Me</a
-          >
-        </div>
         <div class="logo">
           <a href="index.html">
             <img class="navigation-list_item" src="img/logo.svg" alt="logo"
           /></a>
         </div>
+
         <div class="nav-right">
+          <a
+            href="index.html"
+            role="menuitem"
+            class="navigation-list_item active"
+            >Home</a
+          >
+
+          <a href="about.html" role="menuitem" class="navigation-list_item"
+            >About Me</a
+          >
           <a href="mywork.html" role="menuitem" class="navigation-list_item"
             >My Work</a
           >
@@ -134,7 +139,7 @@
     </header>
     <main class="main_about">
       <div class="about">
-        <h1>About</h1>
+        <h1 class="heading">More about me!</h1>
         <table>
           <thead>
             <tr>
@@ -167,6 +172,7 @@
         xmlns="http://www.w3.org/2000/svg"
         class="berlin-illustration"
         height="auto"
+        length="auto"
         viewBox="0 0 700 505"
         xmlns:xlink="http://www.w3.org/1999/xlink"
       >
@@ -2230,22 +2236,18 @@
         </g>
       </svg>
     </main>
-    <footer>
-      <div>
-        <p>Find me on</p>
-      </div>
-      <div>
-        <a href="http://127.0.0.1:5500/index.html"
-          ><img src="img/github.svg" alt="github icon"
-        /></a>
+    <div class="social-media">
+      <a href="http://127.0.0.1:5500/index.html"
+        ><img src="img/github.svg" alt="github icon"
+      /></a>
 
-        <a href="#"><img src="img/twitter.svg" alt="twitter icon" /></a>
+      <a href="#"><img src="img/twitter.svg" alt="twitter icon" /></a>
 
-        <a href="https://www.linkedin.com/in/lisa-r%C3%B6hrig-b50a5315a/">
-          <img src="img/linkedin.svg" alt="linkedin icon"
-        /></a>
-      </div>
-    </footer>
+      <a href="https://www.linkedin.com/in/lisa-r%C3%B6hrig-b50a5315a/">
+        <img src="img/linkedin.svg" alt="linkedin icon"
+      /></a>
+    </div>
+    <footer></footer>
 
     <script src="js/tota11y.min.js"></script>
   </body>
