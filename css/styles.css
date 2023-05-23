@@ -144,7 +144,6 @@ header {
 
 .logo img {
   height: 35px;
-  opacity: 0.6;
   margin: 20px;
 }
 
@@ -259,6 +258,11 @@ form {
   flex-direction: column;
   width: 40%;
   margin-top: 20px;
+}
+
+.error-message {
+  color: var(--primary-color);
+  font-size: 0.8em;
 }
 
 .body-contact {

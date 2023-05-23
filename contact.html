@@ -167,21 +167,28 @@
             id="contact-form"
             class="contact-grid_item"
           >
-            <label class="standard-label form-item" for="contact-email"
-              >Email:
-            </label>
-            <input class="form-item" type="email" id="contact-email" required />
-
-            <label class="standard-label form-item" for="contact-phone"
-              >Telephone:
-            </label>
-            <input
-              type="tel"
-              id="contact-phone"
-              pattern="\d{3}[\-]\d{3}[\-]\d{4}"
-              class="form-item"
-            />
-
+            <div class="input-wrapper">
+              <label class="standard-label form-item" for="contact-email"
+                >Email:
+              </label>
+              <input
+                class="form-item"
+                type="email"
+                id="contact-email"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label class="standard-label form-item" for="contact-phone"
+                >Telephone:
+              </label>
+              <input
+                type="tel"
+                id="contact-phone"
+                pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                class="form-item"
+              />
+            </div>
             <label class="standard-label" for="contact-message"
               >Message:
             </label>
@@ -209,5 +216,6 @@
     </div>
     <footer></footer>
     <script src="js/tota11y.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
