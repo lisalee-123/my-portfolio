@@ -4,17 +4,20 @@
   --primary-background-color: #faebd7;
   --secondary-background-color: #a14d4d;
   --font-color: #ffffff;
-  --secondary-font-color: hsl(0, 1%, 42%);
+  --secondary-font-color: #2f4f4f;
   --font-size-paragraph: 16px;
-  --font-size-h1: 30px;
-  --font-size-2: 24px;
-  --font-size-3: 18px;
-  --font-size-h1-mobile: 26px;
-  --fontsize-paragraph-mobile: 20px;
+  --font-size-h1: 24px;
+  --font-size-2: 18px;
+  --font-size-3: 16px;
+  --font-size-h1-mobile: 20px;
+  --fontsize-paragraph-mobile: 14px;
   --font-size-small: 12px;
-  --font-size-medium: 22px;
+  --font-size-medium: 16px;
   --primary-font-weight: 700;
   --primary-border-radius: 10px;
+  --font-size-h1-max: 28px;
+  --font-size-2-max: 18px;
+  --font-size-3-max: 20px;
 }
 
 * {
@@ -23,12 +26,30 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+h2 {
+  font-size: var(--font-size-2);
+}
+
+p {
+  font-size: var(--font-size-paragraph);
+}
+
 /* HEADER ALL START */
 
 header {
   display: flex;
   width: 100%;
+  height: 100px;
   justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navigation-bar {
@@ -37,6 +58,25 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+}
+
+.nav-left {
+  display: flex;
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+.nav-right a {
+  display: inline-block;
+  font-size: var(--font-size-2);
+  text-align: center;
+  text-decoration: none;
+  margin-right: 50px;
 }
 
 .mobile-nav_icons {
@@ -52,7 +92,7 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 20px;
+  margin: 0 30px;
 }
 
 .icon svg,
@@ -74,39 +114,6 @@ header {
   float: left;
 }
 
-.nav-left {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.nav-right {
-  display: flex;
-  justify-content: space-evenly;
-
-  width: 100%;
-}
-
-.logo {
-  display: inline-flex;
-}
-.logo:hover {
-  cursor: pointer;
-  transition: opacity 0.5s ease-in;
-}
-
-.logo img {
-  height: 45px;
-}
-
-.nav-left a,
-.nav-right a {
-  display: inline-block;
-  font-size: var(--font-size-2);
-  text-align: center;
-  text-decoration: none;
-}
-
 .navigation-list_item {
   position: relative;
   color: var(--primary-color);
@@ -125,7 +132,8 @@ header {
   transition: transform 0.25s ease-out;
 }
 
-.navigation-list_item:hover::after {
+.navigation-list_item:hover::after,
+.navigation-list_item:focus::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -133,14 +141,16 @@ header {
 .logo {
   display: inline;
 }
-.logo:hover {
-  cursor: pointer;
-  transition: opacity 0.5s ease-in;
-}
 
 .logo img {
-  height: 45px;
-  opacity: 0.6;
+  height: 35px;
+  margin: 20px;
+}
+
+.logo:hover,
+.logo:focus {
+  cursor: pointer;
+  transition: opacity 0.5s ease-in;
 }
 
 .active {
@@ -157,18 +167,44 @@ header {
 
 /* HEADER ALL END */
 
-/* MAIN INDEX*/
+/* MAIN*/
 
 main {
   margin-top: 100px;
 }
+
+.heading {
+  font-family: "Amatic SC", cursive;
+  font-size: 45px;
+  margin-top: 120px;
+  text-align: center;
+}
+
+.body-index {
+  color: black;
+  background-image: url("/img/background_about.jpg");
+  background-size: cover;
+  background-position: bottom;
+  height: fit-content;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: var(--secondary-font-color);
+  margin: auto 40px;
+  border-radius: var(--primary-border-radius);
+  padding-left: 20px;
+  width: 90%;
+}
+
 .profile {
   display: flex;
+  flex-direction: column;
   width: 60%;
   margin: 0 auto;
   align-items: center;
-  background-color: var(--primary-background-color);
-  border-radius: var(--primary-border-radius);
   color: var(--secondary-font-color);
 }
 
@@ -176,27 +212,7 @@ main {
   float: left;
   height: 200px;
   border-radius: var(--primary-border-radius);
-  margin: 60px;
-}
-
-h1 {
-  font-size: var(--font-size-h1);
-  font-weight: var(--primary-font-weight);
-}
-
-h2 {
-  font-size: var(--font-size-2);
-  font-weight: var(--primary-font-weight);
-}
-
-h3 {
-  font-size: var(--font-size-3);
-  font-weight: var(--primary-font-weight);
-}
-
-p {
-  font-size: var(--font-size-paragraph);
-  font-weight: var(--primary-font-weight);
+  margin: 0 60px 60px 60px;
 }
 
 a {
@@ -217,7 +233,6 @@ a:active {
 .button_mywork {
   background-color: var(--secondary-color);
   text-decoration: none;
-
   border-radius: 5px;
   border-style: none;
   border-bottom: 2px solid var(--secondary-font-color);
@@ -242,41 +257,68 @@ form {
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-.main-contact {
-  color: var(--secondary-font-color);
-  margin-left: 60px;
+.error-message {
+  color: var(--primary-color);
+  font-size: 0.8em;
 }
 
-.contact-container {
-  margin: auto 0;
+.body-contact {
+  color: black;
+  background-image: url("/img/background-contact.jpg");
+  background-size: cover;
+  background-position: bottom;
+  height: fit-content;
+}
+
+.contact-h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 80px;
+  margin-top: 120px;
+  text-align: right;
+  color: var(--font-color);
+  position: absolute;
+  top: 0%;
+  right: 10%;
+  width: 100%;
 }
 
 /* start grid fallback */
 .contact-grid_item {
   display: inline-block;
   width: 50%;
-  padding: 20px 20px 20px 0;
-  margin: auto 0;
+  padding: 0 20px;
   border-radius: var(--primary-border-radius);
 }
 .contact-grid_item img {
   width: 100%;
   border-radius: var(--primary-border-radius);
 }
-.form-item {
+.form-item,
+.standard-label {
   display: block;
-  width: 60%;
+  border-style: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.standard-label {
+  padding: 0;
+}
+
+textarea {
+  height: 100px;
+  width: 40%;
 }
 /* end grid fallback */
 
 @supports (display: grid) {
   .contact-grid {
     display: grid;
-    /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
     color: var(--secondary-font-color);
@@ -290,7 +332,7 @@ form {
 }
 
 .button_submit {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border-radius: 5px;
   border-style: none;
   border-bottom: 2px solid var(--secondary-font-color);
@@ -314,8 +356,14 @@ form {
 /* ANIMATION PART*/
 
 .berlin-illustration {
-  display: flex;
+  display: block;
   width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.berlin-illustration svg {
+  text-align: center;
   margin: 100px auto;
 }
 
@@ -335,6 +383,21 @@ form {
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
+
+.heading {
+  font-family: "Amatic SC", cursive;
+  font-size: 45px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.heading-index {
+  font-family: "Amatic SC", cursive;
+  font-size: 45px;
+  margin-top: 50px;
+  text-align: center;
+}
+
 @keyframes cloud-move {
   from {
     transform: translate(0, 50px);
@@ -362,21 +425,14 @@ form {
   }
 }
 
-/*Paperplane to be animated to fly across the screen
-
-.paper-plane {
-  height: 60px;
-}
-*/
-
 /*MAIN MYWORK*/
 
 .my-work {
-  margin: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--secondary-font-color);
-}
-.my-work h1 {
-  text-align: center;
+  margin: 100px 40px;
 }
 
 .my-work a {
@@ -417,11 +473,12 @@ form {
 
 @supports (display: grid) {
   .projects-grid {
+    width: 90%;
     display: grid;
     /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1.5fr;
     grid-gap: 20px;
-    margin: 0;
+    margin: auto;
     color: var(--font-color);
   }
   .grid_item {
@@ -443,6 +500,7 @@ form {
   flex-direction: column;
   align-items: center;
   color: var(--secondary-font-color);
+  margin: 100px 40px 20px 40px;
 }
 
 table {
@@ -472,15 +530,15 @@ td {
 
 /* FOOTER ALL START */
 
-footer {
-  /*clears the float from the section above, so the footer is not floating next to the img*/
-
-  margin-top: 100px;
-  clear: both;
+.social-media {
   display: flex;
-  color: var(--secondary-font-color);
-  align-items: center;
   flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 30%;
+  height: 20%;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
 /* FOOTER ALL END */
@@ -537,22 +595,13 @@ footer {
   }
 
   .berlin-illustration {
-    width: 80%;
+    width: 350px;
     margin: 40px auto;
   }
 
   thead,
   tbody {
     font-size: var(--font-size-small);
-  }
-
-  .contact-container {
-    font-size: var(--font-size-3);
-    padding: 0 20px 40px 0;
-    margin: auto 0;
-  }
-  .contact-container a {
-    font-size: var(--font-size-3);
   }
 
   .contact-grid {
@@ -638,7 +687,7 @@ footer {
   }
 
   .berlin-illustration {
-    width: 80%;
+    width: 50%;
     margin: 40px auto;
   }
 
@@ -647,10 +696,6 @@ footer {
     font-size: font-size-medium;
   }
 
-  .contact-container {
-    font-size: font-size-medium;
-    padding: 0 20px 40px 0;
-  }
   .contact-container a {
     font-size: font-size-medium;
   }
@@ -663,7 +708,7 @@ footer {
     grid-gap: 10px;
   }
   #contact-form {
-    width: 80%;
+    width: 50%;
     font-size: font-size-medium;
   }
   .standard-label {
@@ -721,7 +766,7 @@ footer {
 
   .nav-left a,
   .nav-right a {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .profile {
@@ -733,15 +778,15 @@ footer {
   }
 
   .profile h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .profile p {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .profile_portrait {
-    margin: 100px;
+    margin: 50px;
     height: 400px;
   }
 
@@ -750,39 +795,42 @@ footer {
   }
 
   .button_mywork {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
     font-weight: bold;
     padding: 9px;
   }
 
-  footer p {
-    font-size: 35px;
+  .footer-p p {
+    font-size: var(--font-size-3-max);
+    margin: 0;
   }
-  footer a img {
-    width: 60px;
-    margin: 20px;
+
+  footer a,
+  footer img {
+    width: 20px;
+    margin: 40px;
   }
 
   th,
   td {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .about h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .my-work h1,
   h2 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
 
   .my-work p {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   .my-work a {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
   }
 
   .tech-stack svg,
@@ -792,41 +840,36 @@ footer {
   }
 
   .contact-container {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
     padding: 0 20px 40px 0;
   }
 
   .main-contact h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1-max);
   }
   .contact-container a {
-    font-size: 40px;
-    font-size: font-size-medium;
+    font-size: var(--font-size-2-max);
   }
   .contact-container h1 {
     font-size: font-size-h1;
   }
   .contact-grid {
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: column-reverse;
     grid-gap: 10px;
   }
-  #contact-form {
-    width: 80%;
-    font-size: 40px;
-  }
+
   .standard-label {
-    font-size: 40px;
+    font-size: var(--font-size-2-max);
   }
 
   input,
   textarea {
-    border: solid 4px;
+    border: solid 2px;
     border-color: var(--secondary-font-color);
   }
 
   .button_submit {
-    font-size: 35px;
+    font-size: var(--font-size-3-max);
     font-weight: bold;
     padding: 12px;
   }
