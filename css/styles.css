@@ -267,7 +267,7 @@ form {
 
 .body-contact {
   color: black;
-  background-image: url("./img/background-contact.jpg");
+  background-image: url(". /../img/background-contact.jpg");
   background-size: cover;
   background-position: bottom;
   height: fit-content;
